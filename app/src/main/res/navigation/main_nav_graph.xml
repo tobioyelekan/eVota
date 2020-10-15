@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/confirmFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.evota.ui.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.example.evota.ui.confirm.ConfirmFragment"
+        android:label="confirm_fragment"
+        tools:layout="@layout/confirm_fragment" />
+</navigation>
