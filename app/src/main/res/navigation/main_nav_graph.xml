@@ -44,6 +44,14 @@
         android:name="com.example.evota.ui.confirmvote.ConfirmVoteFragment"
         android:label="confirm_vote_fragment"
         tools:layout="@layout/confirm_vote_fragment">
+
+        <argument
+            android:name="candidate1"
+            app:argType="com.example.evota.data.model.Candidate" />
+        <argument
+            android:name="candidate2"
+            app:argType="com.example.evota.data.model.Candidate" />
+
         <action
             android:id="@+id/action_confirmVoteFragment_to_printOut"
             app:destination="@id/printOut" />
