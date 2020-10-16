@@ -9,10 +9,6 @@ import com.example.evota.R
 
 class VerifyFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = VerifyFragment()
-    }
-
     private lateinit var viewModel: VerifyViewModel
 
     override fun onCreateView(
