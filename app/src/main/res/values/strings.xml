@@ -21,4 +21,5 @@
     <string name="date_voted">Date Voted</string>
     <string name="print_out">PRINT OUT</string>
     <string name="inec_full_name">INDEPENDENT NATIONAL ELECTORAL COMMISSION</string>
+    <string name="evota">eVota</string>
 </resources>
