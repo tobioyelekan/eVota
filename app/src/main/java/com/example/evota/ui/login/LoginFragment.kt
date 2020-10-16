@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.evota.R
+import com.example.evota.data.helpers.Status
 import com.example.evota.ui.BaseFragment
 import com.example.evota.util.EventObserver
 import com.example.evota.util.text
@@ -24,6 +26,7 @@ class LoginFragment : BaseFragment(R.layout.login_fragment) {
         }
 
         setupValidationObservers()
+        setupLoginObserver()
     }
 
     private fun setupValidationObservers() {
@@ -46,5 +49,28 @@ class LoginFragment : BaseFragment(R.layout.login_fragment) {
         })
     }
 
+    private fun setupLoginObserver() {
+        viewModel.loginUser.observe(viewLifecycleOwner, Observer {
+            when (it.status) {
+                Status.LOADING -> {
+                    login.visibility = View.GONE
+                    loading.visibility = View.VISIBLE
+                }
+
+                Status.SUCCESS -> {
+                    login.visibility = View.VISIBLE
+                    loading.visibility = View.GONE
+
+                    findNavController().navigate(R.id.action_loginFragment_to_confirmFragment)
+                }
+
+                Status.ERROR -> {
+                    login.visibility = View.VISIBLE
+                    loading.visibility = View.GONE
+                    onError(it.message, it.throwable)
+                }
+            }
+        })
+    }
 
 }

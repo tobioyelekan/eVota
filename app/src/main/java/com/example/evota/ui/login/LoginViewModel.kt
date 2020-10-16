@@ -5,9 +5,11 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.switchMap
+import com.example.evota.repository.UserRepo
 import com.example.evota.util.Event
 
-class LoginViewModel @ViewModelInject constructor() : ViewModel() {
+class LoginViewModel @ViewModelInject constructor(userRepo: UserRepo) : ViewModel() {
 
     private val _validateEmail = MutableLiveData<String>()
     val validateEmail: LiveData<String> = _validateEmail
@@ -46,9 +48,18 @@ class LoginViewModel @ViewModelInject constructor() : ViewModel() {
         }
 
         if (!error) {
-//            login(email, password)
-            _errorMessage.value = Event("hurray")
+            login(email, password)
         }
+    }
+
+    private val _loginDetails = MutableLiveData<Map<String, String>>()
+
+    val loginUser = _loginDetails.switchMap {
+        userRepo.login(it)
+    }
+
+    fun login(email: String, password: String) {
+        _loginDetails.value = mapOf("email" to email, "password" to password)
     }
 
 }

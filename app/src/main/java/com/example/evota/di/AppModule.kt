@@ -5,6 +5,7 @@ import com.example.evota.BuildConfig
 import com.example.evota.BuildConfig.BASE_URL
 import com.example.evota.data.helpers.LiveDataCallAdapterFactory
 import com.example.evota.data.helpers.TokenInterceptor
+import com.example.evota.data.remote.LoginService
 import com.example.evota.data.sharedpreference.EVotaSharedPreferences
 import com.example.evota.data.sharedpreference.Preferences
 import com.google.gson.GsonBuilder
@@ -58,5 +59,11 @@ class AppModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .baseUrl(BASE_URL)
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun providesLoginService(retrofit: Retrofit): LoginService {
+        return retrofit.create(LoginService::class.java)
     }
 }
