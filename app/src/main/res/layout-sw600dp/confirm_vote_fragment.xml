@@ -119,6 +119,7 @@
                             android:id="@+id/partyLogo"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:scaleType="centerCrop"
                             tools:src="@tools:sample/avatars" />
                     </androidx.cardview.widget.CardView>
 
@@ -213,6 +214,7 @@
                             android:id="@+id/partyLogo2"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:scaleType="centerCrop"
                             tools:src="@tools:sample/avatars" />
                     </androidx.cardview.widget.CardView>
 

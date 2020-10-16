@@ -21,16 +21,17 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/partyLogoContainer"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:cardCornerRadius="4dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/partyLogo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
 
         </androidx.cardview.widget.CardView>
@@ -75,15 +76,16 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/candidateImgContainer"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/candidateImg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
 
         </androidx.cardview.widget.CardView>
