@@ -22,4 +22,6 @@
     <string name="print_out">PRINT OUT</string>
     <string name="inec_full_name">INDEPENDENT NATIONAL ELECTORAL COMMISSION</string>
     <string name="evota">eVota</string>
+    <string name="confirm_details_label">Confirm Details to Start Election</string>
+    <string name="please_confirm_details">Please confirm the details below are correct.</string>
 </resources>

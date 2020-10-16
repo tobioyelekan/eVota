@@ -5,6 +5,8 @@ import com.example.evota.BuildConfig
 import com.example.evota.BuildConfig.BASE_URL
 import com.example.evota.data.helpers.LiveDataCallAdapterFactory
 import com.example.evota.data.helpers.TokenInterceptor
+import com.example.evota.data.remote.DeviceDetailsService
+import com.example.evota.data.remote.ElectionService
 import com.example.evota.data.remote.LoginService
 import com.example.evota.data.sharedpreference.EVotaSharedPreferences
 import com.example.evota.data.sharedpreference.Preferences
@@ -65,5 +67,17 @@ class AppModule {
     @Singleton
     fun providesLoginService(retrofit: Retrofit): LoginService {
         return retrofit.create(LoginService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providesDeviceDataService(retrofit: Retrofit): DeviceDetailsService {
+        return retrofit.create(DeviceDetailsService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providesElectionService(retrofit: Retrofit): ElectionService {
+        return retrofit.create(ElectionService::class.java)
     }
 }
