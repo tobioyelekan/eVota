@@ -40,6 +40,8 @@ class CandidateAdapter(private val viewModel: CandidateListViewModel) :
 
             if (select) {
                 viewModel.candidateSelected(position, getItem(position).electionId)
+            } else {
+                viewModel.candidateUnSelected(getItem(position).electionId)
             }
         }
     }

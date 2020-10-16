@@ -47,6 +47,10 @@ class CandidateListViewModel @ViewModelInject constructor(candidateRepo: Candida
         }
     }
 
+    fun candidateUnSelected(electionId: String) {
+        if (selectedCandidates.containsKey(electionId)) selectedCandidates.remove(electionId)
+    }
+
     fun clear() {
         selectedCandidates.clear()
     }
