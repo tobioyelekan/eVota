@@ -16,7 +16,43 @@
     </fragment>
     <fragment
         android:id="@+id/confirmFragment"
-        android:name="com.example.evota.ui.confirm.ConfirmFragment"
+        android:name="com.example.evota.ui.confirmdetails.ConfirmDetailsFragment"
         android:label="confirm_fragment"
-        tools:layout="@layout/confirm_fragment" />
+        tools:layout="@layout/confirm_details_fragment">
+        <action
+            android:id="@+id/action_confirmFragment_to_verifyFragment"
+            app:destination="@id/verifyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/printOut"
+        android:name="com.example.evota.ui.printout.PrintOut"
+        android:label="print_out_fragment"
+        tools:layout="@layout/print_out_fragment" />
+    <fragment
+        android:id="@+id/candidateListFragment"
+        android:name="com.example.evota.ui.candidate.CandidateListFragment"
+        android:label="candidate_list_fragment"
+        tools:layout="@layout/candidate_list_fragment">
+        <action
+            android:id="@+id/action_candidateListFragment_to_confirmVoteFragment"
+            app:destination="@id/confirmVoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmVoteFragment"
+        android:name="com.example.evota.ui.confirmvote.ConfirmVoteFragment"
+        android:label="confirm_vote_fragment"
+        tools:layout="@layout/confirm_vote_fragment">
+        <action
+            android:id="@+id/action_confirmVoteFragment_to_printOut"
+            app:destination="@id/printOut" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyFragment"
+        android:name="com.example.evota.ui.verify.VerifyFragment"
+        android:label="verify_fragment"
+        tools:layout="@layout/verify_fragment">
+        <action
+            android:id="@+id/action_verifyFragment_to_candidateListFragment"
+            app:destination="@id/candidateListFragment" />
+    </fragment>
 </navigation>

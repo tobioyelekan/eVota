@@ -5,4 +5,20 @@
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="login_label">Login</string>
+    <string name="confirm_label">Confirm</string>
+    <string name="polling_unit">Polling Unit:</string>
+    <string name="ward">Ward:</string>
+    <string name="lga">LGA:</string>
+    <string name="state">State:</string>
+    <string name="date">Date:</string>
+    <string name="time">Time:</string>
+    <string name="cancel">Cancel</string>
+    <string name="select_label">You have selected these candidates as your Vote</string>
+    <string name="confirm_vote_label">Please Confirm Your Vote</string>
+    <string name="voted_cand">Voted Candidate</string>
+    <string name="voters_name">Voters Name</string>
+    <string name="voters_info">Voters Info</string>
+    <string name="date_voted">Date Voted</string>
+    <string name="print_out">PRINT OUT</string>
+    <string name="inec_full_name">INDEPENDENT NATIONAL ELECTORAL COMMISSION</string>
 </resources>

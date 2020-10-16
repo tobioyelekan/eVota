@@ -1,7 +1,7 @@
-package com.example.evota.ui.confirm
+package com.example.evota.ui.verify
 
 import androidx.lifecycle.ViewModel
 
-class ConfirmViewModel : ViewModel() {
+class VerifyViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

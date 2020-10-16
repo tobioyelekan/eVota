@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".ui.confirm.ConfirmFragment">
-
+    tools:context=".ui.confirmdetails.ConfirmDetailsFragment">
 
     <FrameLayout
         android:layout_width="400dp"
@@ -61,7 +60,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="25dp"
-                            android:background="@drawable/grey_container"
+                            android:background="@drawable/grey_outline_bg"
                             android:orientation="horizontal"
                             android:padding="10dp">
 
@@ -70,26 +69,30 @@
                                 android:layout_width="30dp"
                                 android:layout_height="20dp"
                                 android:layout_marginStart="10dp"
-                                android:src="@drawable/flag_1"
+                                app:layout_constraintEnd_toStartOf="@id/role_1"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:src="@tools:sample/avatars" />
 
                             <TextView
                                 android:id="@+id/role_1"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
-                                android:text="Nigeria Presidential Election 2020"
+                                android:ellipsize="end"
+                                android:maxLines="1"
                                 android:textColor="@color/colorBlack"
                                 android:textSize="12sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/checkbox1"
                                 app:layout_constraintStart_toEndOf="@id/flag_1"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text=" Election 2020sdssfddffd 2020sdssfddffd 2020sdssfddffd" />
 
                             <CheckBox
+                                android:id="@+id/checkbox1"
                                 android:layout_width="26dp"
                                 android:layout_height="wrap_content"
-                                android:backgroundTint="@color/colorBlack"
                                 android:checked="true"
                                 android:enabled="false"
                                 android:scaleX="1"
@@ -97,6 +100,7 @@
                                 android:text="@null"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/role_1"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -105,7 +109,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/grey_container"
+                            android:background="@drawable/grey_outline_bg"
                             android:orientation="horizontal"
                             android:padding="10dp">
 
@@ -114,26 +118,30 @@
                                 android:layout_width="30dp"
                                 android:layout_height="20dp"
                                 android:layout_marginStart="10dp"
-                                android:src="@drawable/flag_2"
+                                app:layout_constraintEnd_toStartOf="@id/role_2"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:src="@tools:sample/avatars" />
 
                             <TextView
                                 android:id="@+id/role_2"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
-                                android:text="Lagos State Governorship Election 2020"
+                                android:ellipsize="end"
+                                android:maxLines="1"
                                 android:textColor="@color/colorBlack"
                                 android:textSize="12sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/checkbox2"
                                 app:layout_constraintStart_toEndOf="@id/flag_2"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text=" Election 2020sdssfddffd 2020sdssfddffd 2020sdssfddffd" />
 
                             <CheckBox
+                                android:id="@+id/checkbox2"
                                 android:layout_width="26dp"
                                 android:layout_height="wrap_content"
-                                android:backgroundTint="@color/colorBlack"
                                 android:checked="true"
                                 android:enabled="false"
                                 android:scaleX="1"
@@ -141,6 +149,7 @@
                                 android:text="@null"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/role_2"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -162,21 +171,22 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Polling Unit:"
+                                    android:text="@string/polling_unit"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp" />
 
                                 <TextView
+                                    android:id="@+id/pollingUnit"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="2"
                                     android:ellipsize="end"
                                     android:gravity="end"
                                     android:maxLines="1"
-                                    android:text="SHSW-12342020"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp"
-                                    android:textStyle="bold" />
+                                    android:textStyle="bold"
+                                    tools:text="SHSW-12342020" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -189,21 +199,22 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Ward:"
+                                    android:text="@string/ward"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp" />
 
                                 <TextView
+                                    android:id="@+id/ward"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="2"
                                     android:ellipsize="end"
                                     android:gravity="end"
                                     android:maxLines="1"
-                                    android:text="Shitta 00012"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp"
-                                    android:textStyle="bold" />
+                                    android:textStyle="bold"
+                                    tools:text="Shitta 00012" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -216,21 +227,22 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="LGA:"
+                                    android:text="@string/lga"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp" />
 
                                 <TextView
+                                    android:id="@+id/lga"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="2"
                                     android:ellipsize="end"
                                     android:gravity="end"
                                     android:maxLines="1"
-                                    android:text="Surulere Local Government dfdfd"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp"
-                                    android:textStyle="bold" />
+                                    android:textStyle="bold"
+                                    tools:text="Surulere Local Government dfdfd" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -243,21 +255,22 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="State:"
+                                    android:text="@string/state"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp" />
 
                                 <TextView
+                                    android:id="@+id/state"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="2"
                                     android:ellipsize="end"
                                     android:gravity="end"
                                     android:maxLines="1"
-                                    android:text="Lagos State"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp"
-                                    android:textStyle="bold" />
+                                    android:textStyle="bold"
+                                    tools:text="Lagos State" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -270,17 +283,17 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Date:"
+                                    android:text="@string/date"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="23rd September 2020"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp"
-                                    android:textStyle="bold" />
+                                    android:textStyle="bold"
+                                    tools:text="23rd September 2020" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -293,27 +306,27 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Time:"
+                                    android:text="@string/time"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="2:01 PM WAT"
                                     android:textColor="@color/colorBlack"
                                     android:textSize="14sp"
-                                    android:textStyle="bold" />
+                                    android:textStyle="bold"
+                                    tools:text="2:01 PM WAT" />
                             </LinearLayout>
 
                         </LinearLayout>
                     </LinearLayout>
                 </ScrollView>
 
-<!--                <View-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="0.1dp"-->
-<!--                    android:background="@color/colorGrey" />-->
+                <!--                <View-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="0.1dp"-->
+                <!--                    android:background="@color/colorGrey" />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -329,7 +342,7 @@
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
-                        android:text="Cancel" />
+                        android:text="@string/cancel" />
 
                     <com.google.android.material.button.MaterialButton
                         style="@style/filledButtonStyle"
@@ -337,7 +350,7 @@
                         android:layout_height="50dp"
                         android:layout_marginStart="20dp"
                         android:layout_weight="1"
-                        android:text="Confirm" />
+                        android:text="@string/confirm_label" />
 
                 </LinearLayout>
 
@@ -364,6 +377,5 @@
             android:layout_gravity="center"
             android:src="@drawable/inec_img" />
     </com.google.android.material.card.MaterialCardView>
-
 
 </FrameLayout>
