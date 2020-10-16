@@ -16,8 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="70dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginEnd="70dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="20dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container_1"
@@ -56,7 +57,7 @@
                     app:layout_constraintTop_toBottomOf="@id/select_label">
 
                     <TextView
-                        android:id="@+id/role_1"
+                        android:id="@+id/role1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
@@ -64,23 +65,23 @@
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/role_2"
+                        app:layout_constraintEnd_toStartOf="@id/role2"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="Nigeria Presidential Election dfdfdd d f d f df  df d fd  fd" />
 
                     <TextView
-                        android:id="@+id/role_2"
+                        android:id="@+id/role2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
+                        android:layout_marginStart="40dp"
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/role_1"
+                        app:layout_constraintStart_toEndOf="@id/role1"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="Nigeria Presidential Election" />
 

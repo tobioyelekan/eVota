@@ -122,7 +122,6 @@
         android:layout_width="26dp"
         android:layout_height="26dp"
         android:layout_marginStart="10dp"
-        android:checked="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/secondItem"
