@@ -1,6 +1,5 @@
 package com.example.evota.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import com.auth0.android.jwt.Claim
 import com.auth0.android.jwt.JWT
