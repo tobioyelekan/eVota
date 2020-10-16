@@ -16,7 +16,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="500dp"
-            android:layout_height="400dp"
+            android:layout_height="wrap_content"
             android:background="@android:color/white"
             app:cardCornerRadius="8dp">
 
@@ -92,6 +92,7 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/login"
                     style="@style/filledButtonStyle"
@@ -99,6 +100,15 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="40dp"
                     android:text="@string/login_label" />
+
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:visibility="gone" />
+
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>

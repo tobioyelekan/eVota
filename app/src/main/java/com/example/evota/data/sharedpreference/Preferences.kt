@@ -2,10 +2,12 @@ package com.example.evota.data.sharedpreference
 
 interface Preferences {
     fun isUserLoggedIn(): Boolean
+    fun setImg(img: String)
+    fun getImgUrl(): String
+    fun setName(name: String)
+    fun getName(): String
     fun getUserId(): String
     fun setUserId(userId: String)
-    fun setUsername(name: String)
-    fun getUsername(): String
     fun getToken(): String
     fun setToken(token: String)
     fun setEmail(email: String)

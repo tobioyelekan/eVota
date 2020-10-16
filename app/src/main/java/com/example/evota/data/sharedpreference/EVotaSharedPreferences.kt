@@ -7,13 +7,6 @@ import javax.inject.Inject
 class EVotaSharedPreferences @Inject constructor(
     @ApplicationContext context: Context
 ) : Preferences {
-    override fun setUsername(name: String) {
-        preferences.edit().putString(usernameKey, name).apply()
-    }
-
-    override fun getUsername(): String {
-        return preferences.getString(usernameKey, "")!!
-    }
 
     override fun setEmail(email: String) {
         preferences.edit().putString(emailKey, email).apply()
@@ -34,6 +27,22 @@ class EVotaSharedPreferences @Inject constructor(
     private val preferences = context.getSharedPreferences("zoneplayer", Context.MODE_PRIVATE)
 
     override fun isUserLoggedIn(): Boolean = getUserId() != "-1L"
+
+    override fun setImg(img: String) {
+        preferences.edit().putString(imgKey, img).apply()
+    }
+
+    override fun getImgUrl(): String {
+        return preferences.getString(imgKey, "")!!
+    }
+
+    override fun setName(name: String) {
+        preferences.edit().putString(nameKey, name).apply()
+    }
+
+    override fun getName(): String {
+        return preferences.getString(nameKey, "")!!
+    }
 
     override fun getUserId(): String {
         return preferences.getString(userIdKey, "-1L")!!
@@ -57,5 +66,7 @@ class EVotaSharedPreferences @Inject constructor(
         private const val phoneKey = "com.example.evota.constants.constants.phoneId"
         private const val tokenKey = "com.example.evota.constants.constants.tokenId"
         private const val usernameKey = "com.example.evota.constants.constants.usernameKey"
+        private const val nameKey = "com.example.evota.constants.constants.name"
+        private const val imgKey = "com.example.evota.constants.constants.img"
     }
 }
