@@ -119,6 +119,7 @@
                             android:id="@+id/partyLogo"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:scaleType="centerCrop"
                             tools:src="@tools:sample/avatars" />
                     </androidx.cardview.widget.CardView>
 
@@ -213,6 +214,7 @@
                             android:id="@+id/partyLogo2"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
+                            android:scaleType="centerCrop"
                             tools:src="@tools:sample/avatars" />
                     </androidx.cardview.widget.CardView>
 
@@ -328,15 +330,45 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/confirmVote" />
 
+                <TextView
+                    android:id="@+id/m_txtStatusMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="finger print status"
+                    app:layout_constraintBottom_toTopOf="@id/m_btnCaptureStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/voteInstruction" />
+
+                <Button
+                    android:id="@+id/m_btnCaptureStart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="start"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/m_txtStatusMessage" />
+
+                <Button
+                    android:id="@+id/m_btnCaptureStop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="stop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/m_txtStatusMessage" />
+
                 <ImageView
-                    android:id="@+id/fingerprint"
+                    android:id="@+id/m_imgPreview"
                     android:layout_width="180dp"
                     android:layout_height="0dp"
                     android:src="@drawable/fingerprint"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/voteInstruction" />
+                    app:layout_constraintTop_toBottomOf="@id/m_btnCaptureStart" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -348,5 +380,30 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
             android:text="Go Back" />
+
+        <TextView
+            android:id="@+id/m_txtOverlayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/m_cboUsbDevices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/m_cboCaptureSeq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/m_cboSpoofThresLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/m_chkSpoofEnable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>
