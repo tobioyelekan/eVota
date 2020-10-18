@@ -8,3 +8,9 @@ data class ElectionData(
     val id: String,
     val title: String
 )
+
+data class VotingData(
+    val voter: String,
+    val candidate: String,
+    val election: String
+)

@@ -9,7 +9,7 @@ import java.net.UnknownHostException
 
 abstract class BaseFragment(layoutId: Int) : Fragment(layoutId) {
 
-    protected fun onError(error: String?, throwableError: Throwable?) {
+    protected fun onError(error: String?, throwableError: Throwable?): String {
         val errorMessage = if (throwableError is UnknownHostException) {
             "No internet connection"
         } else {
@@ -29,9 +29,9 @@ abstract class BaseFragment(layoutId: Int) : Fragment(layoutId) {
             finalErrorMsg ?: "Something went wrong"
         }
 
-        showMessage(errorMessage)
-
         Timber.d("ERROR_MSG $errorMessage")
+
+        return error!!
     }
 
     protected fun showMessage(message: String) {

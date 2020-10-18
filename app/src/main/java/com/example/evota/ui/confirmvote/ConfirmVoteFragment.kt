@@ -26,6 +26,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.example.evota.R
 import com.example.evota.data.helpers.Status
+import com.example.evota.data.model.VotingData
 import com.example.evota.ui.BaseFragment
 import com.example.evota.util.loadImage
 import com.integratedbiometrics.ibscanultimate.*
@@ -290,12 +291,42 @@ class ConfirmVoteFragment : BaseFragment(R.layout.confirm_vote_fragment), IBScan
                 Status.SUCCESS -> {
                     it.data?.let { voterData ->
                         _SetStatusBarMessage(voterData.name)
+                        activity?.runOnUiThread {
+                            viewModel.voteNow(
+                                listOf(
+                                    VotingData(
+                                        voterData.identification,
+                                        args.candidate1.id,
+                                        args.candidate1.electionId
+                                    ),
+                                    VotingData(
+                                        voterData.identification,
+                                        args.candidate2.id,
+                                        args.candidate2.electionId
+                                    )
+                                )
+                            )
+                        }
                     }
                 }
                 Status.ERROR -> {
-                    activity?.runOnUiThread {
-                        onError(it.message, it.throwable)
+                    _SetStatusBarMessage(onError(it.message, it.throwable))
+                }
+            }
+        })
+
+        viewModel.votingNow.observe(viewLifecycleOwner, Observer {
+            when (it.status) {
+                Status.LOADING -> {
+                    showToastOnUiThread("Voting...", Toast.LENGTH_LONG)
+                }
+                Status.SUCCESS -> {
+                    it.data?.let { voteData ->
+                        _SetStatusBarMessage(voteData.message)
                     }
+                }
+                Status.ERROR -> {
+                    _SetStatusBarMessage(onError(it.message, it.throwable))
                 }
             }
         })
