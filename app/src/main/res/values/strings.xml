@@ -24,6 +24,7 @@
     <string name="evota">eVota</string>
     <string name="confirm_details_label">Confirm Details to Start Election</string>
     <string name="please_confirm_details">Please confirm the details below are correct.</string>
+    <string name="time_voted">Time Voted</string>
 
     <string-array name="spoof_threslevel">
         <item>0</item>

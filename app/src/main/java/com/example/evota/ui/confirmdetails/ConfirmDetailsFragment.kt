@@ -7,16 +7,21 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.evota.R
 import com.example.evota.data.helpers.Status
+import com.example.evota.data.sharedpreference.Preferences
 import com.example.evota.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.confirm_details_fragment.*
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ConfirmDetailsFragment : BaseFragment(R.layout.confirm_details_fragment) {
 
     private val viewModel: ConfirmDetailsViewModel by viewModels()
+
+    @Inject
+    lateinit var preferences: Preferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,6 +50,7 @@ class ConfirmDetailsFragment : BaseFragment(R.layout.confirm_details_fragment) {
                         lga.text = details.lga
                         ward.text = details.ward
                         pollingUnit.text = details.pollingUnit
+                        preferences.setPollingUnit(details.pollingUnit)
                         state.text = details.state
 
                         val calendar = Calendar.getInstance()

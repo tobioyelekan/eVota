@@ -14,4 +14,6 @@ interface Preferences {
     fun getEmail(): String
     fun setPhone(phone: String)
     fun getPhone(): String
+    fun setPollingUnit(polling: String)
+    fun getPollingUnit(): String
 }

@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.evota.R
 import com.example.evota.data.helpers.Status
@@ -322,7 +323,18 @@ class ConfirmVoteFragment : BaseFragment(R.layout.confirm_vote_fragment), IBScan
                 }
                 Status.SUCCESS -> {
                     it.data?.let { voteData ->
-                        _SetStatusBarMessage(voteData.message)
+//                        _SetStatusBarMessage(voteData.message)
+                        activity?.runOnUiThread {
+                            val direction =
+                                ConfirmVoteFragmentDirections
+                                    .actionConfirmVoteFragmentToPrintOut(
+                                        voterName = voteData.voterInfo.name,
+                                        dateVoted = voteData.voterInfo.date,
+                                        timeVoted = voteData.voterInfo.time,
+                                        voteId = voteData.voterInfo.id
+                                    )
+                            findNavController().navigate(direction)
+                        }
                     }
                 }
                 Status.ERROR -> {

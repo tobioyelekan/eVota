@@ -24,6 +24,14 @@ class EVotaSharedPreferences @Inject constructor(
         return preferences.getString(phoneKey, "")!!
     }
 
+    override fun setPollingUnit(polling: String) {
+        preferences.edit().putString(pollingUnitKey, polling).apply()
+    }
+
+    override fun getPollingUnit(): String {
+        return preferences.getString(pollingUnitKey, "")!!
+    }
+
     private val preferences = context.getSharedPreferences("zoneplayer", Context.MODE_PRIVATE)
 
     override fun isUserLoggedIn(): Boolean = getUserId() != "-1L"
@@ -68,5 +76,6 @@ class EVotaSharedPreferences @Inject constructor(
         private const val usernameKey = "com.example.evota.constants.constants.usernameKey"
         private const val nameKey = "com.example.evota.constants.constants.name"
         private const val imgKey = "com.example.evota.constants.constants.img"
+        private const val pollingUnitKey = "com.example.evota.constants.constants.polling"
     }
 }
