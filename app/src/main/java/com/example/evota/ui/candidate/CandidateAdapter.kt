@@ -29,19 +29,25 @@ class CandidateAdapter(private val viewModel: CandidateListViewModel) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(viewModel, getItem(position))
 
-        holder.itemView.checkCandidate.setOnCheckedChangeListener { compoundButton, select ->
-            val checkedRb = compoundButton?.findViewById<CheckBox>(compoundButton.id)
+        with(holder.itemView) {
+            checkCandidate.setOnCheckedChangeListener { compoundButton, select ->
+                val checkedRb = compoundButton?.findViewById<CheckBox>(compoundButton.id)
 
-            if (lastCheckedButton != null) {
-                lastCheckedButton!!.isChecked = false
+                if (lastCheckedButton != null) {
+                    lastCheckedButton!!.isChecked = false
+                }
+
+                if (select) {
+                    lastCheckedButton = checkedRb
+                    viewModel.candidateSelected(position, getItem(position).electionId)
+                } else {
+                    if (lastCheckedButton == checkedRb) lastCheckedButton = null
+                    viewModel.candidateUnSelected(getItem(position).electionId)
+                }
             }
 
-            lastCheckedButton = checkedRb
-
-            if (select) {
-                viewModel.candidateSelected(position, getItem(position).electionId)
-            } else {
-                viewModel.candidateUnSelected(getItem(position).electionId)
+            setOnClickListener {
+                checkCandidate.isChecked = !checkCandidate.isChecked
             }
         }
     }
