@@ -24,7 +24,7 @@ class ConfirmDetailsFragment : BaseFragment(R.layout.confirm_details_fragment) {
         setupObserver()
 
         confirm.setOnClickListener {
-            findNavController().navigate(R.id.action_confirmFragment_to_verifyFragment)
+            findNavController().navigate(R.id.action_confirmFragment_to_candidateListFragment)
         }
     }
 

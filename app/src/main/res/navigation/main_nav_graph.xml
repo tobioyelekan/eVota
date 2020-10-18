@@ -22,8 +22,8 @@
         android:label="confirm_fragment"
         tools:layout="@layout/confirm_details_fragment">
         <action
-            android:id="@+id/action_confirmFragment_to_verifyFragment"
-            app:destination="@id/verifyFragment" />
+            android:id="@+id/action_confirmFragment_to_candidateListFragment"
+            app:destination="@id/candidateListFragment" />
     </fragment>
     <fragment
         android:id="@+id/printOut"
@@ -55,15 +55,6 @@
         <action
             android:id="@+id/action_confirmVoteFragment_to_printOut"
             app:destination="@id/printOut" />
-    </fragment>
-    <fragment
-        android:id="@+id/verifyFragment"
-        android:name="com.example.evota.ui.verify.VerifyFragment"
-        android:label="verify_fragment"
-        tools:layout="@layout/verify_fragment">
-        <action
-            android:id="@+id/action_verifyFragment_to_candidateListFragment"
-            app:destination="@id/candidateListFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
