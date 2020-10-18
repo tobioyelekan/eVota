@@ -1,6 +1,7 @@
 package com.example.evota.data.model
 
 import android.os.Parcelable
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
@@ -14,6 +15,7 @@ data class CandidateData(
     val candidates: List<Candidate>
 )
 
+@Keep
 @Parcelize
 data class Candidate(
     val electionId: String,
@@ -26,6 +28,7 @@ data class Candidate(
     val selected: Boolean = false
 ) : Parcelable
 
+@Keep
 @Parcelize
 data class Party(
     val id: String,

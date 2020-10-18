@@ -20,3 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep class com.example.evota.data.model.** {*;}
+-keepnames class androidx.navigation.fragment.NavHostFragment
