@@ -29,7 +29,25 @@
         android:id="@+id/printOut"
         android:name="com.example.evota.ui.printout.PrintOut"
         android:label="print_out_fragment"
-        tools:layout="@layout/print_out_fragment" />
+        tools:layout="@layout/print_out_fragment">
+        <argument
+            android:name="voterName"
+            app:argType="string" />
+        <argument
+            android:name="dateVoted"
+            app:argType="string" />
+        <argument
+            android:name="timeVoted"
+            app:argType="string" />
+        <argument
+            android:name="voteId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_printOut_to_confirmFragment"
+            app:destination="@id/confirmFragment"
+            app:popUpTo="@id/confirmFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/candidateListFragment"
         android:name="com.example.evota.ui.candidate.CandidateListFragment"

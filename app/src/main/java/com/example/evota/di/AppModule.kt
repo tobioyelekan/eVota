@@ -8,6 +8,7 @@ import com.example.evota.data.helpers.TokenInterceptor
 import com.example.evota.data.remote.DeviceDetailsService
 import com.example.evota.data.remote.ElectionService
 import com.example.evota.data.remote.LoginService
+import com.example.evota.data.remote.VoterService
 import com.example.evota.data.sharedpreference.EVotaSharedPreferences
 import com.example.evota.data.sharedpreference.Preferences
 import com.google.gson.GsonBuilder
@@ -79,5 +80,11 @@ class AppModule {
     @Singleton
     fun providesElectionService(retrofit: Retrofit): ElectionService {
         return retrofit.create(ElectionService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providesVoterService(retrofit: Retrofit): VoterService {
+        return retrofit.create(VoterService::class.java)
     }
 }
