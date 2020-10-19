@@ -14,10 +14,4 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-
-    override fun onBackPressed() {
-        this.moveTaskToBack(true)
-        this.finish()
-        Process.killProcess(Process.myPid())
-    }
 }
